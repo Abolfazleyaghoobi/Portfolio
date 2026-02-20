@@ -1,1 +1,8 @@
 @import "tailwindcss";
+@font-face {
+    font-family: "saira";
+    src: url(/public/fonts/Saira-Italic-VariableFont_wdth\,wght.ttf) format("truetype");
+}
+@theme{
+    --font-saira: 'saira', sans-serif;
+}

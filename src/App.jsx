@@ -1,6 +1,9 @@
+import SectionIntro from "./components/sectionIntro/SectionIntro";
+
 function App() {
   return ( <>
-  <h2 className="bg-amber-200">ali</h2>
+ <SectionIntro/>
+ 
   </> );
 }
 
