@@ -121,16 +121,16 @@ function SectionIntro() {
         opacity: 0,
         visibility: "hidden",
         display: "none",
-        position:"absolute",
-        top:"-125px",
-    
+        position: "absolute",
+        top: "-125px",
+
         duration: 0.001,
       })
         .to(
           containerIntro.current,
           {
             width: "100%",
-          height:"auto",
+            height: "auto",
 
             duration: 2,
           },
@@ -161,7 +161,7 @@ function SectionIntro() {
         )
         .to(itemsRef.current[1], {
           width: "100%",
-          height:"auto",
+          height: "auto",
           display: "flex",
           opacity: 1,
           duration: 2,
@@ -191,7 +191,6 @@ function SectionIntro() {
             </span>
             {/* shadow-[0px_0px_10px_2px_#000000] */}
 
-
             <div
               ref={(el) => (itemsRef.current[2] = el)}
               className="w-full flex text-[18px] font-bold text-[#bebebe] items-center justify-center  mt-5 md:hidden rounded-[9px] "
@@ -203,17 +202,7 @@ function SectionIntro() {
                 FrontEnd Developer
               </span>
             </div>
-
-
-
-
-
           </div>
-
-
-
-
-
 
           {/* body */}
           <div ref={bodyContainerIntro} className="">
@@ -252,50 +241,6 @@ function SectionIntro() {
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         {/*  */}
         <div
