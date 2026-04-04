@@ -1,11 +1,12 @@
-import { createContext, useState } from "react";
+import Menu from "./components/menu/Menu";
 import SectionIntro from "./components/sectionIntro/SectionIntro";
 import AppProvider from "./context/AppContext";
-export const appContext = createContext();
+
 function App() {
   return (
     <>
       <AppProvider>
+        <Menu/>
         <SectionIntro />
       </AppProvider>
     </>

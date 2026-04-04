@@ -175,7 +175,7 @@ function SectionIntro() {
   };
   return (
     <>
-      <div className="h-dvh w-full bg-[#111621] md:flex md:flex-row-reverse grid grid-rows-2 grid-cols-1">
+      <div className="h-dvh w-full  md:flex md:flex-row-reverse grid grid-rows-2 grid-cols-1">
         {/* start intro */}
         <div
           ref={containerIntro}

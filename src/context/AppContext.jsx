@@ -5,7 +5,7 @@ const [next,setNext]=useState(false);
 
 return (
     <>
-    <appContext.Provider>
+    <appContext.Provider value={{next,setNext}}>
     {children}
     </appContext.Provider>
     </>
