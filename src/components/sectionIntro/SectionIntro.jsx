@@ -1,11 +1,15 @@
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { appContext } from "../../context/AppContext";
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(useGSAP);
 function SectionIntro() {
+  // use context
+  const {setShowMenu}=useContext(appContext);
+// -----
   const textIntro = useRef(null);
   const border = useRef(null);
   const btnAnimation = useRef(null);
@@ -68,6 +72,7 @@ function SectionIntro() {
     };
   }, []);
   const hideIntroSection = () => {
+    setShowMenu(true);
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 767px)", () => {
@@ -172,6 +177,7 @@ function SectionIntro() {
           duration: 1,
         });
     });
+
   };
   return (
     <>

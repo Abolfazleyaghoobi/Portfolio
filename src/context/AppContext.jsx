@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
 export const appContext=createContext();
 function AppProvider({children}){
-const [next,setNext]=useState(false);
+const [showMenu,setShowMenu]=useState(false);
 
 return (
     <>
-    <appContext.Provider value={{next,setNext}}>
+    <appContext.Provider value={{showMenu,setShowMenu}}>
     {children}
     </appContext.Provider>
     </>

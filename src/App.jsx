@@ -1,13 +1,12 @@
-import Menu from "./components/menu/Menu";
-import SectionIntro from "./components/sectionIntro/SectionIntro";
+
 import AppProvider from "./context/AppContext";
+import Home from "./homo/Home";
 
 function App() {
   return (
     <>
       <AppProvider>
-        <Menu/>
-        <SectionIntro />
+          <Home/>
       </AppProvider>
     </>
   );
