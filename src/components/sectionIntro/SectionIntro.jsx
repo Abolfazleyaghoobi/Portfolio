@@ -1,15 +1,18 @@
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { appContext } from "../../context/AppContext";
+import minWidth768 from "./Animation/min-width(768px)";
+import minWidth992 from "./Animation/min-width(992px)";
+import maxWidth767 from "./Animation/max-width";
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(useGSAP);
 function SectionIntro() {
   // use context
-  const {setShowMenu}=useContext(appContext);
-// -----
+  const { setShowMenu,setContinuePage } = useContext(appContext);
+  // -----
   const textIntro = useRef(null);
   const border = useRef(null);
   const btnAnimation = useRef(null);
@@ -21,6 +24,9 @@ function SectionIntro() {
   const splitRef = useRef(null);
 
   // ////////////////////////
+  // height
+  // const [height, setHeight] = useState(0);
+  //
   useGSAP(() => {
     splitRef.current = SplitText.create(textIntro.current, {
       type: "chars",
@@ -29,7 +35,7 @@ function SectionIntro() {
     const tl = gsap.timeline();
     tl.from(splitRef.current.chars, {
       // color:"red",
-      duration: 0.5,
+      duration: 0.0001,
       opacity: 0,
       stagger: 0.1,
       y: 50,
@@ -38,14 +44,14 @@ function SectionIntro() {
         showBTN.current,
         {
           opacity: 0,
-          duration: 3,
+          duration: 1,
           y: 50,
         },
         "<",
       )
       .to(splitRef.current.chars.slice(9, 18), {
         color: "#ff42b4",
-        duration: 0.5,
+        duration: 0.1,
         stagger: 0.1,
 
         y: -7,
@@ -62,7 +68,7 @@ function SectionIntro() {
       btnAnimation.current,
       {
         width: "100%",
-        duration: 2,
+        duration: 1,
       },
       "<",
     );
@@ -71,113 +77,37 @@ function SectionIntro() {
       splitRef.current.revert();
     };
   }, []);
+  const mm = gsap.matchMedia();
   const hideIntroSection = () => {
     setShowMenu(true);
-    const mm = gsap.matchMedia();
+    setContinuePage(true)
+    mm.add(
+      {
+        isDesktop: "(min-width: 992px)",
+        isTablet: "(min-width: 768px) and (max-width: 991px)",
+        isMobile: "(max-width: 767px)",
+      },
+      (context) => {
+        console.log("context", context);
 
-    mm.add("(min-width: 767px)", () => {
-      const tl = gsap.timeline();
-      tl.to(bodyContainerIntro.current, {
-        opacity: 0,
-        // display: "none",
-        visibility: "hidden",
-        // duration: 1,
-      })
-        .to(
-          containerIntro.current,
-          {
-            width: "50%",
-            height: "600px",
-
-            duration: 4,
-          },
-          "<",
-        )
-        .to(
-          itemsRef.current[1],
-          {
-            width: "50%",
-            display: "flex",
-            opacity: 1,
-            duration: 2,
-          },
-          "<",
-        )
-        .to(itemsRef.current[0], {
-          width: "40%",
-          height: "80%",
-          borderRadius: "9px",
-          duration: 1,
-        })
-        .to(
-          itemsRef.current[4],
-          {
-            display: "block",
-            opacity: 1,
-          },
-          "<",
-        );
-    });
-
-    // this  animation is under devises 768px
-    mm.add("(max-width: 767px)", () => {
-      const tl = gsap.timeline();
-      tl.to(bodyContainerIntro.current, {
-        opacity: 0,
-        visibility: "hidden",
-        display: "none",
-        position: "absolute",
-        top: "-125px",
-
-        duration: 0.001,
-      })
-        .to(
-          containerIntro.current,
-          {
-            width: "100%",
-            height: "auto",
-
-            duration: 2,
-          },
-          "<",
-        )
-        // animation imgae
-        .to(itemsRef.current[0], {
-          borderRadius: "9px",
-          duration: 1,
-        })
-        // box under image
-        .to(
-          itemsRef.current[2],
-          {
-            height: "3rem",
-            boxShadow: "0px 0px 10px 2px #000000",
-          },
-          "<",
-        )
-        .to(
-          itemsRef.current[3],
-          {
-            display: "inline",
-            opacity: 1,
-            duration: 1,
-          },
-          "<",
-        )
-        .to(itemsRef.current[1], {
-          width: "100%",
-          height: "auto",
-          display: "flex",
-          opacity: 1,
-          duration: 2,
-        })
-        .to(itemsRef.current[4], {
-          display: "block",
-          opacity: 1,
-          duration: 1,
-        });
-    });
-
+        let { isDesktop, isTablet, isMobile } = context.conditions;
+        if (isDesktop) {
+          minWidth992(
+            bodyContainerIntro.current,
+            containerIntro.current,
+            itemsRef,
+          );
+        } else if (isTablet) {
+          minWidth768(
+            bodyContainerIntro.current,
+            containerIntro.current,
+            itemsRef,
+          );
+        } else if (isMobile) {
+          maxWidth767(bodyContainerIntro, containerIntro, itemsRef);
+        }
+      },
+    );
   };
   return (
     <>
@@ -251,29 +181,35 @@ function SectionIntro() {
         {/*  */}
         <div
           ref={(el) => (itemsRef.current[1] = el)}
-          className="w-0   flex items-center overflow-hidden px-2"
+          className="w-0   flex items-center  relative "
         >
           <div
             ref={(el) => (itemsRef.current[4] = el)}
-            className=" w-full text-gray-400   bg-gray-800 p-2  rounded-[9px] mb-12 hidden opacity-0"
+            className=" w-full text-gray-400   bg-gray-800 p-2  rounded-[9px] mb-12  "
           >
-            <h1 className="text-[25px]">Hello, dear friends! 👋</h1>
-            <p className="md:text-[1rem] text-[0.7rem]">
-              Let’s get to introducing myself. My name is Abolfazl, I’m 20 years
-              old, and I'm very interested in front-end development because I
-              can bring what’s in my mind to life. I have a particular fondness
-              for graphic designs. On the other hand, I also have a relatively
-              good interest in back-end development because I want to build a
-              website from start to finish, from front-end to back-end. When I
-              entered the world of web design, I realized it's a huge and
-              endless field. Within this world, creating 3D websites really
-              caught my eye, and I became curious about how these websites are
-              built, how they work, how they are rendered, and how the models
-              used in them are created. That’s when I became familiar with
-              Blender and started learning 3D modeling – what a fantastic field
-              3D web design is! And further down, you can see my skills and what
-              I’ve created with them. So, come along with me! 😊
-            </p>
+            <div
+              className="opacity-0 hidden"
+              ref={(el) => (itemsRef.current[5] = el)}
+            >
+              <h1 className="text-[25px]">Hello, dear friends! 👋</h1>
+              <p className="md:text-[1rem] text-[0.7rem]">
+                Let’s get to introducing myself. My name is Abolfazl, I’m 20
+                years old, and I'm very interested in front-end development
+                because I can bring what’s in my mind to life. I have a
+                particular fondness for graphic designs. On the other hand, I
+                also have a relatively good interest in back-end development
+                because I want to build a website from start to finish, from
+                front-end to back-end. When I entered the world of web design, I
+                realized it's a huge and endless field. Within this world,
+                creating 3D websites really caught my eye, and I became curious
+                about how these websites are built, how they work, how they are
+                rendered, and how the models used in them are created. That’s
+                when I became familiar with Blender and started learning 3D
+                modeling – what a fantastic field 3D web design is! And further
+                down, you can see my skills and what I’ve created with them. So,
+                come along with me! 😊
+              </p>
+            </div>
           </div>
         </div>
         <div></div>

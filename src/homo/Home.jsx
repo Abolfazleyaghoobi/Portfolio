@@ -2,9 +2,10 @@ import { useContext } from "react";
 import Menu from "../components/menu/Menu";
 import SectionIntro from "../components/sectionIntro/SectionIntro";
 import { appContext } from "../context/AppContext";
+import SkillsSection from "../components/skillsSection/SkillsSection";
 
 function Home() {
-    const {showMenu}=useContext(appContext)
+    const {showMenu,continuePage}=useContext(appContext)
     console.log('show', showMenu)
 
 
@@ -12,6 +13,9 @@ function Home() {
     <>
       {showMenu && <Menu />}
       <SectionIntro />
+      {continuePage && (
+        <SkillsSection/>
+      )}
     </>
   );
 }

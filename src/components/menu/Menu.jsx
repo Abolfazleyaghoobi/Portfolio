@@ -62,7 +62,7 @@ function Menu() {
       ref={menuRef}
       className="absolute md:left-12 left-2 top-5 md:top-15 flex items-center rounded-[5px] 
     /* Glassmorphism styles */
-    bg-[#2c4669] 
+    bg-[#2c46695d] 
     backdrop-blur-[2px] 
     border border-white/20 
     shadow-lg
@@ -72,7 +72,7 @@ function Menu() {
     >
       <div 
         onClick={toggleMenu}
-        className="min-w-[50px] h-[50px] flex items-center justify-center cursor-pointer md:text-2xl"
+        className="min-w-12.5 h-12.5 flex items-center justify-center cursor-pointer md:text-2xl"
       >
         {isOpen ? <FaTimes /> : <FaBars />}
       </div>
