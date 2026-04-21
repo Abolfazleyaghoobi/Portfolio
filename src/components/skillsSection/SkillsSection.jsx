@@ -13,7 +13,7 @@ function SkillsSection() {
           <h1 className="text-center text-[2.5rem] text-gray-500   font-bold test">
             My Skills
           </h1>
-        </div>
+        </div> 
         {/* body */}
 
         <div className="bg-[#262b3e] xxl:w-[60%] xl:w-[70%] lg:w-[85%] mx-auto overflow-hidden rounded-[9px] mt-4 p-2 md:pb-8 md:px-6">
