@@ -11,7 +11,7 @@ gsap.registerPlugin(SplitText);
 gsap.registerPlugin(useGSAP);
 function SectionIntro() {
   // use context
-  const { setShowMenu,setContinuePage } = useContext(appContext);
+  const { setShowMenu,setContinuePage,setEndAnimation,endAnimation } = useContext(appContext);
   // -----
   const textIntro = useRef(null);
   const border = useRef(null);
@@ -69,6 +69,9 @@ function SectionIntro() {
       {
         width: "100%",
         duration: 1,
+       onComplete:()=>{
+        setEndAnimation(true)
+       }
       },
       "<",
     );
@@ -79,9 +82,10 @@ function SectionIntro() {
   }, []);
   const mm = gsap.matchMedia();
   const hideIntroSection = () => {
-    setShowMenu(true);
-    setContinuePage(true)
-    mm.add(
+    if (endAnimation) {
+      setShowMenu(true);
+      setContinuePage(true)
+        mm.add(
       {
         isDesktop: "(min-width: 992px)",
         isTablet: "(min-width: 768px) and (max-width: 991px)",
@@ -108,6 +112,7 @@ function SectionIntro() {
         }
       },
     );
+    }
   };
   return (
     <>
@@ -162,7 +167,7 @@ function SectionIntro() {
 
             <div
               ref={showBTN}
-              className="mt-5 mx-auto  bg-[#bcbcbc]  text-white rounded-full hover:bg-[#ff0080] transition-colors duration-300 overflow-hidden w-50 h-10 relative"
+              className="mt-5 mx-auto  bg-[#bcbcbc]  text-white rounded-full  transition-colors duration-300 overflow-hidden w-50 h-10 relative"
             >
               <button
                 onClick={hideIntroSection}
