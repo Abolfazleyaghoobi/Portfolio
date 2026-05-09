@@ -11,7 +11,7 @@ function Skills() {
           />
           <img className="md:w-25 w-19" src="/public/icons/icons8_css3_2.svg" alt="" />
         </div>
-        <span className="ml-2 md:mt-0 mt-3 block text-[#b5b5b5]">
+        <span className="ml-2 md:mt-0 mt-6 block text-[#b5b5b5]">
           <p>HTML: 98%</p>
           <p>CSS: 98%</p>
         </span>

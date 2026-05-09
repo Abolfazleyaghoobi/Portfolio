@@ -6,6 +6,8 @@ import { appContext } from "../../context/AppContext";
 import minWidth768 from "./Animation/min-width(768px)";
 import minWidth992 from "./Animation/min-width(992px)";
 import maxWidth767 from "./Animation/max-width";
+import CurvedLine from "../skillsSection/MoreSkills";
+import AnimatedSVG from "../skillsSection/MoreSkills";
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(useGSAP);
@@ -186,7 +188,7 @@ function SectionIntro() {
         {/*  */}
         <div
           ref={(el) => (itemsRef.current[1] = el)}
-          className="w-0   flex items-center  relative "
+          className="w-0 hidden  items-center  relative "
         >
           <div
             ref={(el) => (itemsRef.current[4] = el)}
@@ -219,6 +221,10 @@ function SectionIntro() {
         </div>
         <div></div>
       </div>
+      {/* <div className="w-100  m-auto h-34">
+      <AnimatedSVG/>
+
+      </div> */}
     </>
   );
 }

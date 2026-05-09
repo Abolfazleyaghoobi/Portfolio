@@ -4,6 +4,7 @@ function AppProvider({ children }) {
   const [showMenu, setShowMenu] = useState(false);
   const [continuePage, setContinuePage] = useState(false);
   const [endAnimation, setEndAnimation] = useState(false);
+  const [startWrite,setStartWrite]=useState(false)
 
   return (
     <>
@@ -15,6 +16,8 @@ function AppProvider({ children }) {
           setContinuePage,
           endAnimation,
           setEndAnimation,
+          startWrite,
+          setStartWrite
         }}
       >
         {children}
