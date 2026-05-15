@@ -12,8 +12,8 @@ function Skills() {
           <img className="md:w-25 w-19" src="/public/icons/icons8_css3_2.svg" alt="" />
         </div>
         <span className="ml-2 md:mt-0 mt-6 block text-[#b5b5b5]">
-          <p>HTML: 98%</p>
-          <p>CSS: 98%</p>
+          <p>HTML: <span className="text-green-400">advance </span></p>
+          <p>CSS: <span className="text-green-400">advance </span></p>
         </span>
       </div>
 
@@ -28,8 +28,8 @@ function Skills() {
           <img className="md:w-25 w-17" src="/public/icons/icons8_react_1.svg" alt="" />
         </div>
         <span className="ml-2 md:mt-0 mt-5 block text-[#b5b5b5]">
-          <p>JavaScript: 93%</p>
-          <p>React: 90%</p>
+          <p>JavaScript: <span className="text-green-400">advance </span></p>
+          <p>React: <span className="text-green-400">advance </span></p>
         </span>
       </div>
 
@@ -44,8 +44,8 @@ function Skills() {
           <img className="md:w-22 w-17" src="/public/icons/expressjs.svg" alt="" />
         </div>
         <span className="ml-2 md:mt-0 mt-7 block text-[#b5b5b5]">
-          <p>Nodejs: 85%</p>
-          <p>expressJS: 80%</p>
+          <p>Nodejs:  <span className="text-green-400">advance </span></p>
+          <p>expressJS: <span className="text-green-400">advance </span></p>
         </span>
       </div>
 
@@ -60,8 +60,8 @@ function Skills() {
           <img className="md:w-25 w-16" src="/public/icons/icons8_mongodb_2.svg" alt="" />
         </div>
         <span className="ml-2 md:mt-0 mt-8 block text-[#b5b5b5]">
-          <p>git: 90%</p>
-          <p>MongoDB: 80%</p>
+          <p>git:  <span className="text-green-400">advance </span></p>
+          <p>MongoDB:  <span className="text-orange-400">intermediate </span></p>
         </span>
       </div>
 

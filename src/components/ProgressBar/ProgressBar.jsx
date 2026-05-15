@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProgressBar = ({ percentage ,color}) => {
+const ProgressBar = ({ percentage ,color,status}) => {
   
   const safePercentage = Math.min(Math.max(percentage, 0), 100);
 
@@ -9,7 +9,7 @@ const ProgressBar = ({ percentage ,color}) => {
       <div
         style={{
           width: `${safePercentage}%`, // اینجا عدد رو مستقیم به درصد تبدیل می‌کنیم
-          height: '10px',
+          height: '25px',
           backgroundColor: `${color}`, // رنگ سبز برای نوار پر شده
           transition: 'width 0.3s ease-in-out', // انیمیشن نرم برای تغییر درصد
           display: 'flex',
@@ -19,7 +19,7 @@ const ProgressBar = ({ percentage ,color}) => {
       
         }}
       >
- 
+          <h1>{status}</h1>
       </div>
     </div>
   );
