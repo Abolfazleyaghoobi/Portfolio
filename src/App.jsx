@@ -1,6 +1,6 @@
 
 import AppProvider from "./context/AppContext";
-import Home from "./homo/Home";
+import Home from "./home/Home";
 
 function App() {
   return (
