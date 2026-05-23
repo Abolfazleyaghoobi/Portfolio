@@ -1,7 +1,7 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import gsap from "gsap";
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 
 function Menu() {
   const menuRef = useRef(null);
