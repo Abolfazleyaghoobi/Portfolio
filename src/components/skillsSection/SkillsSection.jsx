@@ -22,7 +22,7 @@ function SkillsSection() {
       <section className=" w-full  flex flex-col  relative ">
         {/* header */}
         <div className="mt-3 ">
-          <h1 className="text-center text-[2.5rem] text-gray-500   font-bold test">
+          <h1 id="mySkills" className="text-center text-[2.5rem] text-gray-500   font-bold test">
             My Skills
           </h1>
         </div>

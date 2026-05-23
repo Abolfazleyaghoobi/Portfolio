@@ -6,8 +6,7 @@ import { appContext } from "../../context/AppContext";
 import minWidth768 from "./Animation/min-width(768px)";
 import minWidth992 from "./Animation/min-width(992px)";
 import maxWidth767 from "./Animation/max-width";
-import CurvedLine from "../skillsSection/MoreSkills";
-import AnimatedSVG from "../skillsSection/MoreSkills";
+
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(useGSAP);
@@ -118,7 +117,7 @@ function SectionIntro() {
   };
   return (
     <>
-      <div className="h-dvh w-full  md:flex md:flex-row-reverse grid grid-rows-2 grid-cols-1">
+      <div id="intro" className="h-dvh w-full  md:flex md:flex-row-reverse grid grid-rows-2 grid-cols-1">
         {/* start intro */}
         <div
           ref={containerIntro}

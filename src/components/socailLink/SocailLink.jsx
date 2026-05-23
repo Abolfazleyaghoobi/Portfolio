@@ -5,6 +5,7 @@ import {
   FaYoutube,
   FaLinkedin,
   FaInstagram,
+  FaGithub,
 } from "react-icons/fa";
 
 const socials = [
@@ -13,6 +14,12 @@ const socials = [
     icon: <FaTelegramPlane />,
     link: "https://t.me/dev_y0ung",
     color: "#229ED9",
+  },
+  {
+    name: "GitHub",
+    icon: <FaGithub />,
+    link: "https://github.com/Abolfazleyaghoobi?tab=overview&from=2026-05-01&to=2026-05-23",
+    color: "#828282",
   },
   {
     name: "YouTube",

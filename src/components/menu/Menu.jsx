@@ -60,7 +60,7 @@ function Menu() {
   return (
     <div 
       ref={menuRef}
-      className="absolute md:left-12 left-2 top-5 md:top-15 flex items-center rounded-[5px] 
+      className="fixed md:left-12 left-2 top-5 md:top-15 flex items-center rounded-[5px] 
     /* Glassmorphism styles */
     bg-[#2c46695d] 
     backdrop-blur-[2px] 
@@ -78,10 +78,10 @@ function Menu() {
       </div>
       
       <div className="flex whitespace-nowrap md:text-[1.5rem]">
-        <h2 className="md:px-3 px-1 cursor-pointer hover:text-white transition-colors"><a href="#">Home</a></h2>
-        <h2 className="md:px-3 px-1 cursor-pointer hover:text-white transition-colors"><a href="#">Skills</a></h2>
-        <h2 className="md:px-3 px-1 cursor-pointer hover:text-white transition-colors"><a href="#">Projects</a></h2>
-        <h2 className="md:px-4 px-1 cursor-pointer hover:text-white transition-colors"><a href="#">Contact Me</a></h2>
+        <h2 className="md:px-3 px-1 cursor-pointer hover:text-white transition-colors"><a href="#intro">Home</a></h2>
+        <h2 className="md:px-3 px-1 cursor-pointer hover:text-white transition-colors"><a href="#mySkills">Skills</a></h2>
+        <h2 className="md:px-3 px-1 cursor-pointer hover:text-white transition-colors"><a href="#projects">Projects</a></h2>
+        <h2 className="md:px-4 px-1 cursor-pointer hover:text-white transition-colors"><a href="#contact">Contact Me</a></h2>
       </div>
     </div>
   );

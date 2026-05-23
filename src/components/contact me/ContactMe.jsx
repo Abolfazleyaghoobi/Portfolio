@@ -86,7 +86,7 @@ ${form.message}
         
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-center">
-          <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
+          <h2  className="text-4xl font-bold mb-4">Contact Me</h2>
           <p className="text-gray-300 mb-6 leading-relaxed">
             If you have any questions, ideas or collaboration requests, feel free
             to send me a message. I usually reply as soon as possible.
@@ -107,6 +107,7 @@ ${form.message}
           <div className="flex items-center bg-[#111a2b] p-3 rounded-lg gap-3">
             <FaUser />
             <input
+            id="contact"
               type="text"
               name="name"
               placeholder="Your Name"

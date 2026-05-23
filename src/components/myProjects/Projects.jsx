@@ -14,7 +14,7 @@ function Projects() {
   return (
     <>
       <section className="w-[90%]  bg-gray-800 rounded-[9px] p-2 mx-auto my-2 overflow-hidden mt-9">
-        <h2 className="text-gray-300 text-[2rem] text-center">Projects</h2>
+        <h2 id="projects" className="text-gray-300 text-[2rem] text-center">Projects</h2>
         {/* <div className="grid grid-cols-2 mt-2">
           {dataProjects.map((item) => {
             return (
