@@ -9,5 +9,7 @@ export default defineConfig({
     // port: 5057,
     open: true,
     host:true
-  }
+  },
+  base:'/Portfolio/'
+
 })
