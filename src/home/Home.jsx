@@ -4,6 +4,8 @@ import SectionIntro from "../components/sectionIntro/SectionIntro";
 import { appContext } from "../context/AppContext";
 import SkillsSection from "../components/skillsSection/SkillsSection";
 import Project from "../components/myProjects/Projects";
+import ContactMe from "../components/contact me/ContactMe";
+import SocialLinks from "../components/socailLink/SocailLink";
 
 function Home() {
   const { showMenu, continuePage } = useContext(appContext);
@@ -17,6 +19,8 @@ function Home() {
         <>
           <SkillsSection />
           <Project />
+          <ContactMe/>
+          <SocialLinks/>
         </>
       )}
     </>
